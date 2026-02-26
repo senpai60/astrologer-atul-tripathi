@@ -1,0 +1,70 @@
+export interface CardProps {
+  title: string;
+  description: string;
+  category: string;
+  date: string;
+  imageUrl: string;
+}
+
+const Card = ({ title, description, category, date, imageUrl }: CardProps) => {
+  return (
+    <article className="group relative w-full max-w-[420px] bg-(--bg-surface) rounded-3xl p-5 border border-zinc-200/60 shadow-sm hover:shadow-2xl hover:shadow-[#E36A6A]/10 transition-all duration-500 flex flex-col gap-5 cursor-pointer">
+      {/* Image Container */}
+      <div className="relative w-full aspect-4/3 rounded-2xl overflow-hidden bg-zinc-100">
+        <img
+          src={imageUrl}
+          alt={title}
+          className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+        />
+        {/* Subtle overlay gradient on hover */}
+        <div className="absolute inset-0 bg-linear-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+      </div>
+
+      <div className="flex flex-col flex-1 px-1">
+        {/* Tags */}
+        <div className="flex flex-wrap items-center gap-3 mb-4">
+          <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#E36A6A]/10 text-(--accent) text-[11px] font-bold uppercase tracking-widest">
+            <span className="w-1.5 h-1.5 rounded-full bg-(--accent) animate-pulse"></span>
+            {category}
+          </span>
+          <span className="inline-flex items-center text-(--text-light) text-xs font-medium tracking-wide">
+            {date}
+          </span>
+        </div>
+
+        {/* Title */}
+        <h2 className="text-[22px] font-bold text-(--text-primary) leading-snug mb-3 group-hover:text-(--accent) transition-colors duration-300 line-clamp-2">
+          {title}
+        </h2>
+
+        {/* Description */}
+        <p className="text-sm text-(--text-light) leading-relaxed mb-6 line-clamp-3">
+          {description}
+        </p>
+
+        {/* Read More / Call to Action */}
+        <div className="mt-auto pt-4 border-t border-zinc-200/70 flex justify-between items-center">
+          <span className="inline-flex items-center gap-2 text-sm font-bold text-(--text-primary) group-hover:text-(--accent) transition-colors duration-300">
+            Read Prediction
+            <svg
+              className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1.5 stroke-(--accent)"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2.5}
+                d="M14 5l7 7m0 0l-7 7m7-7H3"
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+    </article>
+  );
+};
+
+export default Card;
