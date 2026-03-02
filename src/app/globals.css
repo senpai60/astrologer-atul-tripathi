@@ -7,15 +7,14 @@
 }
 
 :root {
-  --bg-body: #FFFBF1;
-  --bg-surface: #fff7e2;
+  --bg-body: #0a0a0a; /* Deep Space Black */
+  --bg-surface: #171717; /* Dark Gray for surfaces/cards */
 
-  --text-primary: #280905;
-  --text-light: #2809058e;
+  --text-primary: #fafafa; /* Off-white for max readability */
+  --text-light: #a1a1aa; /* Muted zinc for secondary text */
 
-  --accent: #E36A6A;
-  --accent-light: #FFB2B2;
-
+  --accent: #eab308; /* Mystic Gold accents */
+  --accent-light: #fef08a; /* Lighter gold for hovers */
 }
 
 html,
@@ -24,7 +23,7 @@ body {
   color: var(--text-primary);
 }
 
-img{
+img {
   width: 100%;
   height: 100%;
   object-fit: cover;

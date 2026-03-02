@@ -1,16 +1,26 @@
 export interface CardProps {
+  id: string;
   title: string;
   description: string;
   category: string;
   date: string;
   imageUrl: string;
+  handleClick: (id: string) => void;
 }
 
-const Card = ({ title, description, category, date, imageUrl }: CardProps) => {
+const Card = ({
+  id,
+  title,
+  description,
+  category,
+  date,
+  imageUrl,
+  handleClick,
+}: CardProps) => {
   return (
-    <article className="group relative w-full max-w-[420px] bg-(--bg-surface) rounded-3xl p-5 border border-zinc-200/60 shadow-sm hover:shadow-2xl hover:shadow-[#E36A6A]/10 transition-all duration-500 flex flex-col gap-5 cursor-pointer">
+    <article className="group relative w-full max-w-[420px] bg-(--bg-surface) rounded-3xl p-5 border border-zinc-800/60 shadow-sm hover:shadow-2xl hover:shadow-(--accent)/10 transition-all duration-500 flex flex-col gap-5 cursor-pointer">
       {/* Image Container */}
-      <div className="relative w-full aspect-4/3 rounded-2xl overflow-hidden bg-zinc-100">
+      <div className="relative w-full aspect-4/3 rounded-2xl overflow-hidden bg-zinc-800">
         <img
           src={imageUrl}
           alt={title}
@@ -23,7 +33,7 @@ const Card = ({ title, description, category, date, imageUrl }: CardProps) => {
       <div className="flex flex-col flex-1 px-1">
         {/* Tags */}
         <div className="flex flex-wrap items-center gap-3 mb-4">
-          <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#E36A6A]/10 text-(--accent) text-[11px] font-bold uppercase tracking-widest">
+          <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-(--accent)/10 text-(--accent) text-[11px] font-bold uppercase tracking-widest">
             <span className="w-1.5 h-1.5 rounded-full bg-(--accent) animate-pulse"></span>
             {category}
           </span>
@@ -43,7 +53,10 @@ const Card = ({ title, description, category, date, imageUrl }: CardProps) => {
         </p>
 
         {/* Read More / Call to Action */}
-        <div className="mt-auto pt-4 border-t border-zinc-200/70 flex justify-between items-center">
+        <div
+          onClick={() => handleClick(id)}
+          className="mt-auto pt-4 border-t border-zinc-800/70 flex justify-between items-center"
+        >
           <span className="inline-flex items-center gap-2 text-sm font-bold text-(--text-primary) group-hover:text-(--accent) transition-colors duration-300">
             Read Prediction
             <svg
