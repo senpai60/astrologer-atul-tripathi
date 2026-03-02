@@ -20,7 +20,7 @@ const Card = ({
   return (
     <article className="group relative w-full max-w-[420px] bg-(--bg-surface) rounded-3xl p-5 border border-zinc-800/60 shadow-sm hover:shadow-2xl hover:shadow-(--accent)/10 transition-all duration-500 flex flex-col gap-5 cursor-pointer">
       {/* Image Container */}
-      <div className="relative w-full aspect-4/3 rounded-2xl overflow-hidden bg-zinc-800">
+      <div className="relative w-full aspect-video rounded-2xl overflow-hidden bg-zinc-800">
         <img
           src={imageUrl}
           alt={title}

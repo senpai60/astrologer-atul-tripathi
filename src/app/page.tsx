@@ -111,6 +111,20 @@ const dummyArticles = [
 
 const Home = () => {
   const router = useRouter();
+  const scrollRef = React.useRef<HTMLDivElement>(null);
+
+  const scrollLeft = () => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollBy({ left: -350, behavior: "smooth" });
+    }
+  };
+
+  const scrollRight = () => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollBy({ left: 350, behavior: "smooth" });
+    }
+  };
+
   return (
     <div className="w-full min-h-screen bg-(--bg-body)">
       {/* HERO SECTION */}
@@ -213,7 +227,7 @@ const Home = () => {
         id="insights"
         className="w-full max-w-[1400px] mx-auto px-6 md:px-16 lg:px-32 py-24 relative z-10"
       >
-        <div className="flex flex-col mb-16 items-center text-center md:items-start md:text-left">
+        <div className="flex flex-col mb-16 items-center text-center">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 tracking-tight">
             Latest Astrological Insights
           </h2>
@@ -224,19 +238,67 @@ const Home = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+        {/* Horizontal Slider Content */}
+        <div
+          ref={scrollRef}
+          className="flex overflow-x-auto gap-8 pb-8 snap-x snap-mandatory w-full [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+        >
           {dummyArticles.map((article) => (
-            <Card
-              id={article.id.toString()}
+            <div
               key={article.id}
-              title={article.title}
-              description={article.description}
-              category={article.category}
-              date={article.date}
-              imageUrl={article.imageUrl}
-              handleClick={() => router.push(`/article/${article.id}`)}
-            />
+              className="min-w-[300px] sm:min-w-[350px] md:min-w-[400px] snap-start shrink-0"
+            >
+              <Card
+                id={article.id.toString()}
+                title={article.title}
+                description={article.description}
+                category={article.category}
+                date={article.date}
+                imageUrl={article.imageUrl}
+                handleClick={() => router.push(`/article/${article.id}`)}
+              />
+            </div>
           ))}
+        </div>
+
+        {/* Universal Navigation Arrows at Bottom */}
+        <div className="flex items-center justify-center gap-6 mt-8">
+          <button
+            onClick={scrollLeft}
+            className="p-4 rounded-full border border-zinc-700 bg-zinc-900 text-white hover:bg-(--accent) hover:text-black hover:border-(--accent) transition-all shadow-md group"
+          >
+            <svg
+              className="w-6 h-6 transform group-hover:-translate-x-1 transition-transform"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M15 19l-7-7 7-7"
+              />
+            </svg>
+          </button>
+          <button
+            onClick={scrollRight}
+            className="p-4 rounded-full border border-zinc-700 bg-zinc-900 text-white hover:bg-(--accent) hover:text-black hover:border-(--accent) transition-all shadow-md group"
+          >
+            <svg
+              className="w-6 h-6 transform group-hover:translate-x-1 transition-transform"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M9 5l7 7-7 7"
+              />
+            </svg>
+          </button>
         </div>
       </section>
     </div>

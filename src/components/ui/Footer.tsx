@@ -2,123 +2,136 @@ import Link from "next/link";
 import React from "react";
 
 const Footer = () => {
-  const recentPosts = [
-    "3 मार्च 2026: आज का लव राशिफल — कैसी रहेगी आपकी लव लाइफ?",
-    "शुक्र राशि परिवर्तन: 2 मार्च 2026 से 5 राशियों के जीवन में लौटेंगे EX-PARTNER, शनि देव के साथ मिलकर शुक्र करेंगे 100 गुना चमत्कार!",
-    "3 मार्च 2026 का विनाशकारी 'ब्लड मून': खग्रास ग्रहण लाएगा विश्व युद्ध का भयावह संकट—इतिहास गवाह है!",
-    "3 मार्च 2026 खग्रास चंद्र ग्रहण: सूतक काल और 12 राशियों पर असर—जानें अतुल त्रिपाठी के साथ ग्रहण की पूरी सच्चाई!",
-    "2 March 2026 आज का लव राशिफल: अतुल त्रिपाठी से जानें थर्ड पार्टी का सच और प्यार की वापसी की खुशखबरी!",
+  const footerLinks = [
+    {
+      title: "SERVICES",
+      links: [
+        "Vedic Astrology",
+        "Kundali Milan",
+        "Tarot Reading",
+        "Numerology",
+      ],
+    },
+    {
+      title: "READINGS",
+      links: [
+        "Daily Love Reading",
+        "Deep Horoscope",
+        "Couple Love Reading",
+        "Family Package",
+      ],
+    },
+    {
+      title: "RESOURCES",
+      links: ["Blog", "Dharmik News", "Featured", "My Take"],
+    },
+    {
+      title: "QUICK LINKS",
+      links: ["Shop", "Cart", "Checkout", "My Account"],
+    },
   ];
 
-  const quickLinks = [
-    "About Us",
-    "Blog",
-    "दैनिक लव राशिफल",
-    "Call Consultation",
-    "Cart",
-    "Checkout",
-    "Disclaimer",
-    "Featured",
-    "Home & Contact",
-    "My account",
-    "My Take",
-    "News",
-    "Online Puja Services",
-    "Privacy Policy",
-    "Refund and Returns Policy",
-    "Services",
-    "Shop",
-  ];
-
-  const bottomLinks = [
-    "Services",
-    "daily love reading",
-    "love remedies",
-    "Astro Remedies",
-    "dharmik news",
-    "CONTACT",
-    "my take",
-    "Products",
-    "About Us",
-    "Featured",
-    "Privacy Policy",
-    "Disclaimer",
-    "News",
-  ];
+  const companyColumn = ["About", "Contact", "Disclaimer", "Refund Policy"];
 
   return (
-    <footer className="w-full bg-(--bg-surface) border-t border-(--bg-body) text-(--text-primary) relative z-10 mt-16">
-      <div className="max-w-[1400px] mx-auto px-6 md:px-16 lg:px-32 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-24">
-          {/* Left Column - Recent Posts */}
-          <div className="flex flex-col gap-4">
-            <h3 className="font-bold text-xl mb-4 text-(--accent) uppercase tracking-wide">
-              Recent Highlights
-            </h3>
-            {recentPosts.map((post, index) => (
-              <div
-                key={index}
-                className="border-t border-(--text-light)/20 pt-4 first:border-0 first:pt-0"
-              >
-                <Link
-                  href="#"
-                  className="text-sm font-semibold hover:text-(--accent) transition-colors inline-block leading-relaxed"
-                >
-                  {post}
-                </Link>
-              </div>
-            ))}
-          </div>
-
-          {/* Middle Column - Quick Links */}
-          <div className="flex flex-col">
-            <h3 className="font-bold text-xl mb-4 text-(--accent) uppercase tracking-wide">
-              Quick Links
-            </h3>
-            <div className="grid grid-cols-2 gap-x-4 gap-y-2">
-              {quickLinks.map((link, index) => (
-                <Link
-                  href="#"
-                  key={index}
-                  className="text-sm font-medium text-(--text-light) hover:text-(--accent) transition-colors"
-                >
-                  {link}
-                </Link>
+    <footer className="w-full bg-[#111111] text-white pt-20 pb-8 mt-16 border-t border-zinc-900 font-sans">
+      <div className="max-w-[1500px] mx-auto px-6 md:px-12 lg:px-20">
+        <div className="flex flex-col lg:flex-row justify-between w-full">
+          {/* LEFT SIDE: 4 Columns + Massive Logo at Bottom */}
+          <div className="w-full lg:w-[75%] flex flex-col justify-between">
+            {/* 4 Link Columns Grid */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-12">
+              {footerLinks.map((col, idx) => (
+                <div key={idx} className="flex flex-col">
+                  <h4 className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest mb-6">
+                    {col.title}
+                  </h4>
+                  <ul className="flex flex-col gap-4">
+                    {col.links.map((link, linkIdx) => (
+                      <li key={linkIdx}>
+                        <Link
+                          href="#"
+                          className="text-[15px] md:text-base text-zinc-300 hover:text-white transition-colors duration-200 font-medium"
+                        >
+                          {link}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               ))}
             </div>
-          </div>
 
-          {/* Right Column - Badges / Protect */}
-          <div className="flex flex-col items-start lg:items-end">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-green-600 bg-green-50 text-green-700 font-bold text-xs uppercase tracking-wider mb-6 shadow-sm">
-              <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
-              DMCA Protected
+            {/* Giant Logo/Text Area (Hidden on mobile for better flow, or just scaled down) */}
+            <div className="mt-20 md:mt-32 hidden md:flex items-center gap-4">
+              {/* Optional: Simple geometric logo to mimic the "Retool" zig-zag logo or just glowing circle */}
+              <div className="w-20 h-20 md:w-32 md:h-32 shrink-0 border-[8px] border-[#EAB308] rounded-tl-3xl rounded-br-3xl hidden md:block opacity-90"></div>
+              <h1 className="text-7xl md:text-[6rem] lg:text-[9rem] font-bold tracking-tighter text-white leading-none">
+                Astrologer
+              </h1>
             </div>
           </div>
-        </div>
-      </div>
 
-      {/* Bottom Bar */}
-      <div className="bg-black/90 text-white/80 py-6 border-t border-zinc-800">
-        <div className="max-w-[1400px] mx-auto px-6 md:px-16 lg:px-32 flex flex-col lg:flex-row items-center justify-between gap-6 text-xs text-center lg:text-left">
-          <div className="font-medium tracking-wide">
-            Copyright BY ASTROLOGER ATUL TRIPATHI
+          {/* RIGHT SIDE: 5th Column (Company), Buttons, Legal, Copyright */}
+          <div className="w-full lg:w-[22%] flex flex-col mt-16 lg:mt-0 xl:pl-10">
+            <h4 className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest mb-6">
+              COMPANY
+            </h4>
+            <ul className="flex flex-col gap-4 mb-10">
+              {companyColumn.map((link, idx) => (
+                <li key={idx}>
+                  <Link
+                    href="#"
+                    className="text-[15px] md:text-base text-zinc-300 hover:text-white transition-colors duration-200 font-medium"
+                  >
+                    {link}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+
+            {/* CTA Buttons */}
+            <div className="flex flex-col gap-3 mb-12">
+              <button className="w-full py-3 px-6 bg-[#E8DCC4] text-black text-xs font-bold uppercase tracking-widest rounded-full hover:bg-white hover:scale-105 transition-all duration-300">
+                Book Consultation
+              </button>
+              <button className="w-full py-3 px-6 bg-transparent border border-zinc-600 text-zinc-300 text-xs font-bold uppercase tracking-widest rounded-full hover:border-[#E8DCC4] hover:text-[#E8DCC4] transition-all duration-300">
+                Read Horoscope
+              </button>
+            </div>
+
+            {/* Downward flow of tiny legal links */}
+            <div className="flex flex-col gap-3 mt-auto">
+              <Link
+                href="#"
+                className="text-[10px] sm:text-xs font-bold text-zinc-500 uppercase tracking-widest hover:text-zinc-300 transition-colors"
+              >
+                Terms of Use
+              </Link>
+              <Link
+                href="#"
+                className="text-[10px] sm:text-xs font-bold text-zinc-500 uppercase tracking-widest hover:text-zinc-300 transition-colors"
+              >
+                Privacy Policy
+              </Link>
+              <Link
+                href="#"
+                className="text-[10px] sm:text-xs font-bold text-zinc-500 uppercase tracking-widest hover:text-zinc-300 transition-colors mb-8"
+              >
+                Security
+              </Link>
+
+              <div className="text-[9px] sm:text-[10px] font-bold text-zinc-500 uppercase tracking-widest">
+                © ATUL TRIPATHI 2026
+              </div>
+            </div>
           </div>
 
-          <div className="flex flex-wrap items-center justify-center lg:justify-end gap-x-2 gap-y-2 font-medium">
-            {bottomLinks.map((link, index) => (
-              <React.Fragment key={index}>
-                <Link
-                  href="#"
-                  className="hover:text-(--accent-light) transition-colors uppercase tracking-wider"
-                >
-                  {link}
-                </Link>
-                {index !== bottomLinks.length - 1 && (
-                  <span className="text-white/30 hidden sm:inline">|</span>
-                )}
-              </React.Fragment>
-            ))}
+          {/* Mobile Giant Logo (Show stacked) */}
+          <div className="md:hidden mt-16 -mb-6">
+            <h1 className="text-6xl font-bold tracking-tighter text-white leading-none">
+              Astrologer
+            </h1>
           </div>
         </div>
       </div>
