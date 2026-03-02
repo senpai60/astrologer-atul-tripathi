@@ -4,6 +4,7 @@ import React from "react";
 const Navbar = () => {
   const navLinks = [
     { name: "Home", href: "/" },
+    { name: "About", href: "/bio" },
     { name: "Services", href: "/#services" },
     { name: "Daily Horoscope", href: "/#horoscope" },
     { name: "Blog", href: "/#blog" },

@@ -3,6 +3,7 @@
 import Card from "@/components/ui/Card";
 import React from "react";
 import { useRouter } from "next/navigation";
+import AboutSection from "@/components/layout/homepage/AboutSection";
 
 const dummyArticles = [
   {
@@ -112,7 +113,7 @@ const Home = () => {
   const router = useRouter();
   return (
     <div className="w-full min-h-screen bg-(--bg-body)">
-      {/* PROFESSIONAL HERO SECTION */}
+      {/* HERO SECTION */}
       <section className="relative w-full h-auto min-h-[90vh] flex items-center justify-center overflow-hidden py-20 lg:py-0">
         {/* Background Cosmos Image with Overlay */}
         <div className="absolute inset-0 z-0">
@@ -205,6 +206,8 @@ const Home = () => {
         </div>
       </section>
 
+      {/* ABOUT SECTION */}
+      <AboutSection />
       {/* Grid wrapper for the cards */}
       <section
         id="insights"
