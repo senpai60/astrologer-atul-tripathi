@@ -67,7 +67,7 @@ const Footer = () => {
               {/* Optional: Simple geometric logo to mimic the "Retool" zig-zag logo or just glowing circle */}
               <div className="w-20 h-20 md:w-32 md:h-32 shrink-0 border-[8px] border-[#EAB308] rounded-tl-3xl rounded-br-3xl hidden md:block opacity-90"></div>
               <h1 className="text-7xl md:text-[6rem] lg:text-[9rem] font-bold tracking-tighter text-white leading-none">
-                Astrologer
+                Atul Tripathi
               </h1>
             </div>
           </div>
