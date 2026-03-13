@@ -30,10 +30,10 @@ const ProductCard: React.FC<ProductCardProps> = ({
   };
 
   return (
-    <div className="group flex flex-col bg-[#171717] rounded-2xl overflow-hidden border border-zinc-800 hover:border-[#EAB308]/50 transition-all duration-500 shadow-lg hover:shadow-[0_10px_30px_rgba(234,179,8,0.1)] relative">
+    <div className="group flex flex-col h-full bg-[#171717] rounded-xl sm:rounded-2xl overflow-hidden border border-zinc-800 hover:border-[#EAB308]/50 transition-all duration-500 shadow-lg hover:shadow-[0_10px_30px_rgba(234,179,8,0.1)] relative">
       {/* Sale Badge */}
       {isSale && (
-        <div className="absolute top-4 left-4 z-10 bg-[#22c55e] text-white text-[11px] font-bold uppercase tracking-wider py-1 px-3 rounded shadow-md">
+        <div className="absolute top-3 left-3 sm:top-4 sm:left-4 z-10 bg-[#22c55e] text-white text-[10px] sm:text-[11px] font-bold uppercase tracking-wider py-1 px-2 sm:px-3 rounded shadow-md">
           Sale!
         </div>
       )}
@@ -41,7 +41,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
       {/* Product Image */}
       <Link
         href={`/products/${id}`}
-        className="block relative w-full aspect-square overflow-hidden bg-zinc-900 cursor-pointer"
+        className="block relative w-full aspect-4/3 sm:aspect-square overflow-hidden bg-zinc-900 cursor-pointer"
       >
         <img
           src={imageUrl}
@@ -53,13 +53,13 @@ const ProductCard: React.FC<ProductCardProps> = ({
       </Link>
 
       {/* Product Details */}
-      <div className="flex flex-col items-center justify-between flex-1 p-6 text-center">
+      <div className="flex flex-col items-center justify-between flex-1 p-4 sm:p-6 text-center">
         <div className="flex flex-col items-center w-full">
-          <span className="text-zinc-500 text-xs italic lowercase mb-2 tracking-wide">
+          <span className="text-zinc-500 text-[11px] sm:text-xs italic lowercase mb-1.5 sm:mb-2 tracking-wide">
             {category}
           </span>
           <Link href={`/products/${id}`}>
-            <h3 className="text-lg font-bold text-white mb-4 leading-snug group-hover:text-[#EAB308] transition-colors line-clamp-2 uppercase">
+            <h3 className="text-base sm:text-lg font-bold text-white mb-3 sm:mb-4 leading-snug group-hover:text-[#EAB308] transition-colors line-clamp-2 uppercase">
               {title}
             </h3>
           </Link>
@@ -67,28 +67,28 @@ const ProductCard: React.FC<ProductCardProps> = ({
 
         <div className="flex flex-col items-center w-full mt-auto">
           {/* Price Section */}
-          <div className="flex items-center gap-3 mb-6">
+          <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6">
             {originalPrice && (
-              <span className="text-zinc-500 line-through text-sm font-medium">
+              <span className="text-zinc-500 line-through text-xs sm:text-sm font-medium">
                 {formatPrice(originalPrice)}
               </span>
             )}
             {discountedPrice ? (
-              <span className="text-[#4ade80] font-bold text-lg drop-shadow-[0_0_8px_rgba(74,222,128,0.3)]">
+              <span className="text-[#4ade80] font-bold text-base sm:text-lg drop-shadow-[0_0_8px_rgba(74,222,128,0.3)]">
                 {formatPrice(discountedPrice)}
               </span>
             ) : (
-              <span className="text-[#4ade80] font-bold text-lg drop-shadow-[0_0_8px_rgba(74,222,128,0.3)]">
+              <span className="text-[#4ade80] font-bold text-base sm:text-lg drop-shadow-[0_0_8px_rgba(74,222,128,0.3)]">
                 Contact for Price
               </span>
             )}
           </div>
 
           {/* Add to Cart Button */}
-          <button className="w-full py-2.5 px-6 bg-transparent border border-zinc-700 text-zinc-300 font-bold uppercase tracking-widest text-xs rounded hover:bg-[#EAB308] hover:border-[#EAB308] hover:text-black transition-all duration-300 flex items-center justify-center gap-2">
+          <button className="w-full py-2 sm:py-2.5 px-4 sm:px-6 bg-transparent border border-zinc-700 text-zinc-300 font-bold uppercase tracking-widest text-[11px] sm:text-xs rounded hover:bg-[#EAB308] hover:border-[#EAB308] hover:text-black transition-all duration-300 flex items-center justify-center gap-2">
             Add to cart
             <svg
-              className="w-4 h-4"
+              className="w-3.5 h-3.5 sm:w-4 sm:h-4"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"

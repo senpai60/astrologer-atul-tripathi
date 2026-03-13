@@ -54,7 +54,7 @@ const dummyArticles = [
     category: "Tarot Reading",
     date: "15 Feb 2026",
     imageUrl:
-      "https://i.pinimg.com/1200x/29/7a/ff/297aff703875be44a864724c9c10f81d.jpg",
+      "https://i.pinimg.com/1200x/72/ef/ca/72efca2f1be102c76058fef8cd9eba03.jpg",
   },
   {
     id: 6,
@@ -64,7 +64,7 @@ const dummyArticles = [
     category: "Vastu Shastra",
     date: "10 Feb 2026",
     imageUrl:
-      "https://i.pinimg.com/1200x/ab/ab/7b/abab7bff6cd3f976a405fd7c569f4705.jpg",
+      "https://i.pinimg.com/736x/b5/07/6c/b5076c5f011c07332a37c3f0c8804901.jpg",
   },
   {
     id: 7,
@@ -74,7 +74,7 @@ const dummyArticles = [
     category: "Planetary Transits",
     date: "05 Feb 2026",
     imageUrl:
-      "https://i.pinimg.com/1200x/d6/3b/bc/d63bbcfbc2ec7210e71ce9402e973d45.jpg",
+      "https://i.pinimg.com/1200x/47/64/5c/47645cdc5d75a0f3e9052f1588bb3548.jpg",
   },
   {
     id: 8,
@@ -84,7 +84,7 @@ const dummyArticles = [
     category: "Numerology",
     date: "01 Feb 2026",
     imageUrl:
-      "https://i.pinimg.com/1200x/2a/3b/b7/2a3bb7db552835dbb721e06fa66f43e5.jpg",
+      "https://i.pinimg.com/1200x/5f/a3/32/5fa3322dbd9f386bd033f47b6fb5afc8.jpg",
   },
   {
     id: 9,
@@ -94,7 +94,7 @@ const dummyArticles = [
     category: "Healing",
     date: "28 Jan 2026",
     imageUrl:
-      "https://i.pinimg.com/736x/f6/8d/f9/f68df9f2e3be75e929bdf3de36eb4ab3.jpg",
+      "https://i.pinimg.com/736x/c4/c4/23/c4c423856a816085f4d9ec751d3c8f09.jpg",
   },
   {
     id: 10,
@@ -105,7 +105,7 @@ const dummyArticles = [
     category: "Career Reading",
     date: "21 Jan 2026",
     imageUrl:
-      "https://i.pinimg.com/1200x/99/bd/27/99bd27ee85cc223e71dfbc216b345da5.jpg",
+      "https://i.pinimg.com/736x/11/51/ed/1151ed24b183c179fa98aa369d206ee5.jpg",
   },
 ];
 
@@ -128,7 +128,7 @@ const Home = () => {
   return (
     <div className="w-full min-h-screen bg-(--bg-body)">
       {/* HERO SECTION */}
-      <section className="relative w-full h-auto min-h-[90vh] flex items-center justify-center overflow-hidden py-20 lg:py-0">
+      <section className="relative w-full h-auto lg:min-h-[90vh] flex flex-col justify-start lg:justify-center overflow-hidden pt-8 pb-12 lg:py-0">
         {/* Background Cosmos Image with Overlay */}
         <div className="absolute inset-0 z-0">
           <img
@@ -141,32 +141,54 @@ const Home = () => {
         </div>
 
         {/* Content Container */}
-        <div className="relative z-10 w-full max-w-[1400px] mx-auto px-6 md:px-16 lg:px-32 flex flex-col-reverse lg:flex-row items-center justify-between gap-16 lg:gap-8">
-          {/* Left: Text Content */}
-          <div className="flex-1 flex flex-col items-center lg:items-start text-center lg:text-left gap-6 lg:max-w-xl">
-            <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-(--accent)/30 bg-(--accent)/10 backdrop-blur-md shadow-[0_0_15px_rgba(234,179,8,0.15)]">
-              <span className="w-2 h-2 rounded-full bg-(--accent) animate-pulse shadow-[0_0_5px_rgba(234,179,8,0.8)]"></span>
-              <span className="text-xs font-bold text-(--accent-light) tracking-[0.2em] uppercase">
+        <div className="relative z-10 w-full max-w-[1400px] mx-auto px-4 sm:px-6 md:px-16 lg:px-32 flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-6 lg:gap-8 lg:h-full">
+          {/* Left: Text Content & Mobile Image */}
+          <div className="flex-1 flex flex-col items-center lg:items-start text-center lg:text-left w-full lg:max-w-xl justify-center my-auto lg:my-0 pb-2 lg:pb-0">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 md:px-5 md:py-2 rounded-full border border-(--accent)/30 bg-(--accent)/10 backdrop-blur-md shadow-[0_0_15px_rgba(234,179,8,0.15)] mb-4 lg:mb-6">
+              <span className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-(--accent) animate-pulse shadow-[0_0_5px_rgba(234,179,8,0.8)]"></span>
+              <span className="text-[10px] md:text-xs font-bold text-(--accent-light) tracking-[0.2em] uppercase">
                 Vedic Astrology Expert
               </span>
             </div>
 
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-[1.1] tracking-tighter">
+            <h1 className="text-[2.5rem] leading-[1.1] sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white tracking-tighter mb-5 lg:mb-6">
               समस्या है तो <br />
               <span className="text-transparent bg-clip-text bg-linear-to-r from-(--accent) to-[#fde047]">
                 समाधान भी होगा
               </span>
             </h1>
 
-            <p className="text-lg text-zinc-300 leading-relaxed font-light mt-2 max-w-lg">
+            {/* Mobile Immersive Image Element */}
+            <div className="flex w-full relative justify-center items-center lg:hidden my-2">
+              <div className="absolute w-[160px] h-[160px] bg-(--accent)/30 blur-[60px] rounded-full mix-blend-screen pointer-events-none"></div>
+
+              <div className="relative w-full max-w-[200px] sm:max-w-[250px] aspect-square rounded-4xl p-2 flex items-center justify-center">
+                {/* Spinning geometric border */}
+                <div className="absolute inset-0 border-[1.5px] border-dashed border-(--accent)/40 rounded-4xl animate-[spin_40s_linear_infinite]"></div>
+                {/* Outer soft solid ring */}
+                <div className="absolute inset-1.5 border border-(--accent-light)/20 rounded-[1.8rem] backdrop-blur-md bg-white/5"></div>
+
+                {/* Actual Image container */}
+                <div className="relative w-full h-full rounded-[1.6rem] overflow-hidden bg-zinc-900 shadow-xl border border-zinc-700/50 group">
+                  <img
+                    src="https://astrologeratultripathi.com/wp-content/uploads/2026/02/WhatsApp_Image_2025-02-25_at_1.41.07_PM-removebg-preview.webp"
+                    alt="Astrologer Atul Tripathi"
+                    className="w-full h-full object-cover z-10 scale-110 object-[center_top] transform transition-transform duration-[2s] group-hover:scale-125 ease-out"
+                  />
+                  <div className="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent"></div>
+                </div>
+              </div>
+            </div>
+
+            <p className="text-[13px] sm:text-base md:text-lg text-zinc-300 leading-relaxed font-light mt-2 lg:mt-2 max-w-lg mb-6 lg:mb-8 px-2 sm:px-0">
               Discover the profound wisdom of the stars. Get deep insights into
               your life, love, and career with Astrologer Atul Tripathi. Find
               clarity and align yourself with cosmic energy today.
             </p>
 
-            <div className="flex flex-col sm:flex-row items-center gap-4 mt-6">
-              <button className="w-full sm:w-auto px-8 py-4 bg-(--accent) text-black font-extrabold rounded-full hover:scale-105 hover:bg-(--accent-light) shadow-[0_0_30px_rgba(234,179,8,0.3)] hover:shadow-[0_0_40px_rgba(234,179,8,0.6)] transition-all duration-300">
-                Book Consultation
+            <div className="flex flex-row items-center justify-center lg:justify-start gap-3 w-full max-w-[360px] sm:max-w-none mx-auto lg:mx-0 px-2 lg:px-0">
+              <button className="flex-1 px-3 py-3 sm:px-6 sm:py-4 text-[13px] sm:text-base bg-(--accent) text-black font-extrabold rounded-full hover:scale-105 hover:bg-(--accent-light) shadow-[0_0_20px_rgba(234,179,8,0.2)] hover:shadow-[0_0_30px_rgba(234,179,8,0.5)] transition-all duration-300 leading-tight">
+                Book Consult
               </button>
               <button
                 onClick={() =>
@@ -174,11 +196,11 @@ const Home = () => {
                     .getElementById("insights")
                     ?.scrollIntoView({ behavior: "smooth" })
                 }
-                className="w-full sm:w-auto px-8 py-4 bg-white/5 backdrop-blur-sm border border-zinc-700 text-white font-semibold rounded-full hover:bg-white/10 hover:border-zinc-500 transition-all duration-300 flex items-center justify-center gap-2 group"
+                className="flex-1 px-3 py-3 sm:px-6 sm:py-4 text-[13px] sm:text-base bg-white/5 backdrop-blur-sm border border-zinc-700 text-white font-semibold rounded-full hover:bg-white/10 hover:border-zinc-500 transition-all duration-300 flex items-center justify-center gap-1.5 group leading-tight"
               >
-                Read Horoscope
+                Horoscope
                 <svg
-                  className="w-5 h-5 transition-transform duration-300 group-hover:translate-y-1"
+                  className="w-3.5 h-3.5 sm:w-5 sm:h-5 transition-transform duration-300 group-hover:translate-y-1"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -194,13 +216,13 @@ const Home = () => {
             </div>
           </div>
 
-          {/* Right: Immersive Image Element */}
-          <div className="flex-1 w-full relative flex justify-center items-center mt-10 lg:mt-0">
+          {/* Right: Immersive Image Element - Desktop Only */}
+          <div className="hidden lg:flex flex-1 w-full relative justify-center items-center mt-10 lg:mt-0">
             {/* Massive Glow effect behind the entire image section */}
-            <div className="absolute w-[250px] h-[250px] md:w-[400px] md:h-[400px] bg-(--accent)/30 blur-[120px] rounded-full mix-blend-screen pointer-events-none"></div>
+            <div className="absolute w-[400px] h-[400px] bg-(--accent)/30 blur-[120px] rounded-full mix-blend-screen pointer-events-none"></div>
 
             {/* Zodiac/Mandala decoration border */}
-            <div className="relative w-full max-w-[320px] md:max-w-[420px] aspect-square rounded-[3rem] p-4 flex items-center justify-center">
+            <div className="relative w-full max-w-[420px] aspect-square rounded-[3rem] p-4 flex items-center justify-center">
               {/* Spinning geometric border */}
               <div className="absolute inset-0 border-2 border-dashed border-(--accent)/40 rounded-[3rem] animate-[spin_40s_linear_infinite]"></div>
               {/* Outer soft solid ring */}
@@ -225,14 +247,14 @@ const Home = () => {
       {/* Grid wrapper for the cards */}
       <section
         id="insights"
-        className="w-full max-w-[1400px] mx-auto px-6 md:px-16 lg:px-32 py-24 relative z-10"
+        className="w-full max-w-[1400px] mx-auto px-4 sm:px-6 md:px-16 lg:px-32 py-12 lg:py-24 relative z-10"
       >
-        <div className="flex flex-col mb-16 items-center text-center">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 tracking-tight">
+        <div className="flex flex-col mb-10 lg:mb-16 items-center text-center">
+          <h2 className="text-[2rem] leading-tight sm:text-4xl lg:text-5xl font-bold text-white mb-3 lg:mb-4 tracking-tight px-2">
             Latest Astrological Insights
           </h2>
-          <div className="w-24 h-1.5 bg-(--accent) rounded-full shadow-[0_0_10px_rgba(234,179,8,0.5)]"></div>
-          <p className="mt-6 text-zinc-400 max-w-2xl text-lg">
+          <div className="w-16 lg:w-24 h-1 md:h-1.5 bg-(--accent) rounded-full shadow-[0_0_10px_rgba(234,179,8,0.5)]"></div>
+          <p className="mt-4 lg:mt-6 text-zinc-400 max-w-2xl text-[14px] sm:text-base lg:text-lg px-2">
             Daily horoscopes, planetary transits, and profound vedic knowledge
             exactly when you need it.
           </p>
@@ -241,12 +263,12 @@ const Home = () => {
         {/* Horizontal Slider Content */}
         <div
           ref={scrollRef}
-          className="flex overflow-x-auto gap-8 pb-8 snap-x snap-mandatory w-full [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+          className="flex overflow-x-auto gap-4 lg:gap-8 pb-8 snap-x snap-mandatory w-full [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden px-2 lg:px-0"
         >
           {dummyArticles.map((article) => (
             <div
               key={article.id}
-              className="min-w-[300px] sm:min-w-[350px] md:min-w-[400px] snap-start shrink-0"
+              className="w-[85vw] max-w-[320px] sm:max-w-none sm:w-[350px] md:w-[400px] snap-center sm:snap-start shrink-0"
             >
               <Card
                 id={article.id.toString()}

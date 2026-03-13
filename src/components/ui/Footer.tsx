@@ -34,7 +34,7 @@ const Footer = () => {
   const companyColumn = ["About", "Contact", "Disclaimer", "Refund Policy"];
 
   return (
-    <footer className="w-full bg-[#111111] text-white pt-20 pb-8 mt-16 border-t border-zinc-900 font-sans">
+    <footer className="relative z-10 w-full bg-[#111111] text-white pt-20 pb-8 mt-16 border-t border-zinc-900 font-sans">
       <div className="max-w-[1500px] mx-auto px-6 md:px-12 lg:px-20">
         <div className="flex flex-col lg:flex-row justify-between w-full">
           {/* LEFT SIDE: 4 Columns + Massive Logo at Bottom */}
@@ -130,7 +130,7 @@ const Footer = () => {
           {/* Mobile Giant Logo (Show stacked) */}
           <div className="md:hidden mt-16 -mb-6">
             <h1 className="text-6xl font-bold tracking-tighter text-white leading-none">
-              Astrologer
+              Atul Tripathi
             </h1>
           </div>
         </div>

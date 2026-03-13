@@ -18,9 +18,9 @@ const Card = ({
   handleClick,
 }: CardProps) => {
   return (
-    <article className="group relative w-full max-w-[420px] bg-(--bg-surface) rounded-3xl p-5 border border-zinc-800/60 shadow-sm hover:shadow-2xl hover:shadow-(--accent)/10 transition-all duration-500 flex flex-col gap-5 cursor-pointer">
+    <article className="group relative w-full max-w-[420px] bg-(--bg-surface) rounded-2xl sm:rounded-3xl p-4 sm:p-5 border border-zinc-800/60 shadow-sm hover:shadow-2xl hover:shadow-(--accent)/10 transition-all duration-500 flex flex-col gap-3 sm:gap-5 cursor-pointer">
       {/* Image Container */}
-      <div className="relative w-full aspect-video rounded-2xl overflow-hidden bg-zinc-800">
+      <div className="relative w-full aspect-video rounded-xl sm:rounded-2xl overflow-hidden bg-zinc-800">
         <img
           src={imageUrl}
           alt={title}
@@ -32,35 +32,35 @@ const Card = ({
 
       <div className="flex flex-col flex-1 px-1">
         {/* Tags */}
-        <div className="flex flex-wrap items-center gap-3 mb-4">
-          <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-(--accent)/10 text-(--accent) text-[11px] font-bold uppercase tracking-widest">
+        <div className="flex flex-wrap items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
+          <span className="inline-flex items-center gap-1.5 px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-full bg-(--accent)/10 text-(--accent) text-[10px] sm:text-[11px] font-bold uppercase tracking-widest">
             <span className="w-1.5 h-1.5 rounded-full bg-(--accent) animate-pulse"></span>
             {category}
           </span>
-          <span className="inline-flex items-center text-(--text-light) text-xs font-medium tracking-wide">
+          <span className="inline-flex items-center text-(--text-light) text-[11px] sm:text-xs font-medium tracking-wide">
             {date}
           </span>
         </div>
 
         {/* Title */}
-        <h2 className="text-[22px] font-bold text-(--text-primary) leading-snug mb-3 group-hover:text-(--accent) transition-colors duration-300 line-clamp-2">
+        <h2 className="text-[17px] sm:text-[22px] font-bold text-(--text-primary) leading-snug mb-2 sm:mb-3 group-hover:text-(--accent) transition-colors duration-300 line-clamp-2">
           {title}
         </h2>
 
         {/* Description */}
-        <p className="text-sm text-(--text-light) leading-relaxed mb-6 line-clamp-3">
+        <p className="text-[13px] sm:text-sm text-(--text-light) leading-relaxed mb-4 sm:mb-6 line-clamp-3">
           {description}
         </p>
 
         {/* Read More / Call to Action */}
         <div
           onClick={() => handleClick(id)}
-          className="mt-auto pt-4 border-t border-zinc-800/70 flex justify-between items-center"
+          className="mt-auto pt-3 sm:pt-4 border-t border-zinc-800/70 flex justify-between items-center"
         >
-          <span className="inline-flex items-center gap-2 text-sm font-bold text-(--text-primary) group-hover:text-(--accent) transition-colors duration-300">
+          <span className="inline-flex items-center gap-2 text-[13px] sm:text-sm font-bold text-(--text-primary) group-hover:text-(--accent) transition-colors duration-300">
             Read Prediction
             <svg
-              className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1.5 stroke-(--accent)"
+              className="w-3.5 h-3.5 sm:w-4 sm:h-4 transition-transform duration-300 group-hover:translate-x-1.5 stroke-(--accent)"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"

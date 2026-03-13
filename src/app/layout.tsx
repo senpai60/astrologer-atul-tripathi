@@ -24,7 +24,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${poppins.variable} ${poppins.className} antialiased min-h-screen flex flex-col`}
+        className={`${poppins.variable} ${poppins.className} antialiased min-h-screen flex flex-col overflow-x-hidden`}
+        suppressHydrationWarning
       >
         <Navbar />
         <main className="flex-1">{children}</main>
