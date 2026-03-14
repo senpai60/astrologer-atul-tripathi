@@ -1,9 +1,16 @@
 "use client";
 
 import Card from "@/components/ui/Card";
-import React from "react";
+import React, { useRef } from "react";
 import { useRouter } from "next/navigation";
 import AboutSection from "@/components/layout/homepage/AboutSection";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
+
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger, useGSAP);
+}
 
 const dummyArticles = [
   {
@@ -111,7 +118,62 @@ const dummyArticles = [
 
 const Home = () => {
   const router = useRouter();
-  const scrollRef = React.useRef<HTMLDivElement>(null);
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const heroTextRef = useRef<HTMLDivElement>(null);
+
+  useGSAP(() => {
+    // Check if user prefers reduced motion for better accessibility
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (prefersReducedMotion) return;
+
+    // 1. Hero Fade & Parallax on Scroll (only happens as you scroll down)
+    gsap.to(heroTextRef.current, {
+      y: 100,
+      opacity: 0,
+      ease: "none",
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: "top top",
+        end: "bottom top",
+        scrub: 1, // Smooth scrubbing
+      }
+    });
+
+    // 2. Insights Header Animation
+    gsap.fromTo(".insights-header", 
+      { opacity: 0, y: 50 },
+      { 
+        opacity: 1, 
+        y: 0, 
+        duration: 1.2,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: ".insights-header",
+          start: "top 85%",
+          toggleActions: "play none none reverse",
+        }
+      }
+    );
+
+    // 3. Horizontal Scroll Cards Animation (Fade In & Scale up sequentially)
+    gsap.fromTo(".article-card", 
+      { opacity: 0, scale: 0.9, y: 40 },
+      { 
+        opacity: 1, 
+        scale: 1,
+        y: 0, 
+        duration: 0.8,
+        stagger: 0.1,
+        ease: "back.out(1.2)",
+        scrollTrigger: {
+          trigger: scrollRef.current,
+          start: "top 85%",
+          toggleActions: "play none none reverse",
+        }
+      }
+    );
+  }, { scope: containerRef });
 
   const scrollLeft = () => {
     if (scrollRef.current) {
@@ -126,7 +188,7 @@ const Home = () => {
   };
 
   return (
-    <div className="w-full min-h-screen bg-(--bg-body)">
+    <div ref={containerRef} className="w-full min-h-screen bg-(--bg-body)">
       {/* HERO SECTION */}
       <section className="relative w-full h-auto lg:min-h-[90vh] flex flex-col justify-start lg:justify-center overflow-hidden pt-8 pb-12 lg:py-0">
         {/* Background Cosmos Image with Overlay */}
@@ -143,7 +205,7 @@ const Home = () => {
         {/* Content Container */}
         <div className="relative z-10 w-full max-w-[1400px] mx-auto px-4 sm:px-6 md:px-16 lg:px-32 flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-6 lg:gap-8 lg:h-full">
           {/* Left: Text Content & Mobile Image */}
-          <div className="flex-1 flex flex-col items-center lg:items-start text-center lg:text-left w-full lg:max-w-xl justify-center my-auto lg:my-0 pb-2 lg:pb-0">
+          <div ref={heroTextRef} className="flex-1 flex flex-col items-center lg:items-start text-center lg:text-left w-full lg:max-w-xl justify-center my-auto lg:my-0 pb-2 lg:pb-0">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 md:px-5 md:py-2 rounded-full border border-(--accent)/30 bg-(--accent)/10 backdrop-blur-md shadow-[0_0_15px_rgba(234,179,8,0.15)] mb-4 lg:mb-6">
               <span className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-(--accent) animate-pulse shadow-[0_0_5px_rgba(234,179,8,0.8)]"></span>
               <span className="text-[10px] md:text-xs font-bold text-(--accent-light) tracking-[0.2em] uppercase">
@@ -249,7 +311,7 @@ const Home = () => {
         id="insights"
         className="w-full max-w-[1400px] mx-auto px-4 sm:px-6 md:px-16 lg:px-32 py-12 lg:py-24 relative z-10"
       >
-        <div className="flex flex-col mb-10 lg:mb-16 items-center text-center">
+        <div className="flex flex-col mb-10 lg:mb-16 items-center text-center insights-header">
           <h2 className="text-[2rem] leading-tight sm:text-4xl lg:text-5xl font-bold text-white mb-3 lg:mb-4 tracking-tight px-2">
             Latest Astrological Insights
           </h2>
@@ -268,7 +330,7 @@ const Home = () => {
           {dummyArticles.map((article) => (
             <div
               key={article.id}
-              className="w-[85vw] max-w-[320px] sm:max-w-none sm:w-[350px] md:w-[400px] snap-center sm:snap-start shrink-0"
+              className="article-card w-[85vw] max-w-[320px] sm:max-w-none sm:w-[350px] md:w-[400px] snap-center sm:snap-start shrink-0"
             >
               <Card
                 id={article.id.toString()}
