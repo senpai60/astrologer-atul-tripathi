@@ -9,7 +9,7 @@ export default function NewsPage() {
       summary:
         "Astrologers warn of a massive shift in global energies as five planets align in Pisces. Here's what this means for political and economic stability over the next year.",
       image:
-        "https://i.pinimg.com/1200x/c7/2b/e4/c72be4bc2cf0a12e3a6c4217117e33dc.jpg",
+        "https://i.pinimg.com/1200x/11/fb/11/11fb115d5b9e2b5b8c5215fb3acf9830.jpg",
       date: "March 1, 2026",
       source: "AstroNews Daily",
     },
@@ -20,7 +20,7 @@ export default function NewsPage() {
       summary:
         "In a grand ceremony held in New Delhi, eminent astrologer Atul Tripathi was awarded for his outstanding contributions to the field of predictive Vedic astrology and spiritual counseling over the last decade.",
       image:
-        "https://i.pinimg.com/1200x/29/7a/ff/297aff703875be44a864724c9c10f81d.jpg",
+        "https://yt3.googleusercontent.com/W2FZ07F7CmpyZhK9JP-tAjjtP0twrpq2OKkbys3wsKqQB-jecFMVZJcsowwLc7hAxFAILHEzCA=s160-c-k-c0x00ffffff-no-rj",
       date: "Feb 20, 2026",
       source: "Press Release",
     },
@@ -30,7 +30,7 @@ export default function NewsPage() {
       summary:
         "The upcoming solar eclipse is set to bring sudden changes and emotional breakthroughs. Experts share protective mantras and remedies to maintain harmony during this chaotic transit.",
       image:
-        "https://i.pinimg.com/1200x/e0/f1/a2/e0f1a20ddc94488b0ebba2dbbda2e783.jpg",
+        "https://i.pinimg.com/1200x/d2/5d/54/d25d542381d757a748975ffcb4f7dc70.jpg",
       date: "Jan 15, 2026",
       source: "Cosmic Weekly",
     },

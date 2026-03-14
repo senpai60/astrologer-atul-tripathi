@@ -9,7 +9,7 @@ export default function BlogPage() {
       excerpt:
         "Why is Kundali Milan considered essential in Vedic Astrology? Discover how the alignment of stars can impact your married life.",
       image:
-        "https://i.pinimg.com/1200x/c1/f5/63/c1f563ab2ad9f42ab8be421b8ff1e51b.jpg",
+        "https://i.pinimg.com/1200x/ba/6d/09/ba6d0987fa9c3135774e642c12bc5b28.jpg",
       category: "Marriage",
       date: "24 Feb 2026",
     },
@@ -19,7 +19,7 @@ export default function BlogPage() {
       excerpt:
         "Saturn return can bring major life changes. Learn how to navigate this challenging period and emerge stronger and wiser.",
       image:
-        "https://i.pinimg.com/1200x/fa/e0/f1/fae0f1d19889ee7d53ec164b3df3d52c.jpg",
+        "https://i.pinimg.com/736x/55/41/42/55414249c35117f6097d12a6efe2a6f6.jpg",
       category: "Astrology Guide",
       date: "22 Feb 2026",
     },
@@ -29,7 +29,7 @@ export default function BlogPage() {
       excerpt:
         "Did you know different phases of the moon carry different energies? Learn how to sync your goals with the lunar cycle for optimal results.",
       image:
-        "https://i.pinimg.com/1200x/c3/c7/2b/c3c72b78112afad10cb8cf8dc68fb980.jpg",
+        "https://i.pinimg.com/736x/ec/55/e2/ec55e292f47a21ade4d7f4de585222a9.jpg",
       category: "Spiritual",
       date: "20 Feb 2026",
     },
@@ -39,7 +39,7 @@ export default function BlogPage() {
       excerpt:
         "Your rising sign dictates your outward personality and how others see you. Dive deeper into the true meaning of your ascendant.",
       image:
-        "https://i.pinimg.com/1200x/1e/ab/94/1eab94ef0bc5b01ba0bdac0decfcfcf2.jpg",
+        "https://i.pinimg.com/736x/25/dd/68/25dd6817d376edf76915a64968e17603.jpg",
       category: "Astrology 101",
       date: "18 Feb 2026",
     },
@@ -49,7 +49,7 @@ export default function BlogPage() {
       excerpt:
         "Feeling lost in your professional life? See which career paths align best with your planetary placements according to Vedic principles.",
       image:
-        "https://i.pinimg.com/1200x/9d/23/e6/9d23e61ff36056f7e4afeb5347209ac7.jpg",
+        "https://i.pinimg.com/736x/fa/6a/c1/fa6ac152e031ddbd0e720e2c7c710ce7.jpg",
       category: "Career",
       date: "15 Feb 2026",
     },
@@ -59,7 +59,7 @@ export default function BlogPage() {
       excerpt:
         "Stressed and anxious? Try these simple and effective astrological remedies to calm your mind and invite positive energy into your home.",
       image:
-        "https://i.pinimg.com/1200x/29/7a/ff/297aff703875be44a864724c9c10f81d.jpg",
+        "https://i.pinimg.com/736x/41/dd/c4/41ddc446ee70d6a36538b672e2cef1a0.jpg",
       category: "Remedies",
       date: "12 Feb 2026",
     },

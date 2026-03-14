@@ -10,7 +10,7 @@ export default function GemstonesPage() {
       price: "₹15,000+",
       benefits: "Wealth, Education, Wisdom, Prosperity",
       image:
-        "https://i.pinimg.com/1200x/c1/f1/8c/c1f18cccbc5ed167ef08869ff3bb87f4.jpg",
+        "https://i.pinimg.com/1200x/07/8c/e5/078ce599f209a812eaba0995d4733712.jpg",
       popular: true,
     },
     {
@@ -20,7 +20,7 @@ export default function GemstonesPage() {
       price: "₹25,000+",
       benefits: "Career Success, Focus, Fame, Hard Work",
       image:
-        "https://i.pinimg.com/1200x/ec/97/96/ec9796e95f171092e0797198d002fbc5.jpg",
+        "https://i.pinimg.com/1200x/db/08/42/db08428d69781c5c6beebe8ba40ca7b5.jpg",
       popular: true,
     },
     {
@@ -30,7 +30,7 @@ export default function GemstonesPage() {
       price: "₹10,000+",
       benefits: "Leadership, Health, Confidence, Authority",
       image:
-        "https://i.pinimg.com/1200x/57/27/ef/5727efbc8456a29f8d5062f6b5f4be83.jpg",
+        "https://i.pinimg.com/736x/ec/9e/09/ec9e094e43d694a347511bd8a8e88e09.jpg",
       popular: false,
     },
     {
@@ -40,7 +40,7 @@ export default function GemstonesPage() {
       price: "₹12,000+",
       benefits: "Communication, Business intellect, Creativity",
       image:
-        "https://i.pinimg.com/1200x/90/e1/99/90e199859f518e38d7890562e128bc5d.jpg",
+        "https://i.pinimg.com/webp/1200x/4c/ec/a7/4ceca72f5461530ccf0a9f1e475f9d46.webp",
       popular: false,
     },
     {
@@ -50,7 +50,7 @@ export default function GemstonesPage() {
       price: "₹5,000+",
       benefits: "Courage, Energy, Overcoming Obstacles",
       image:
-        "https://i.pinimg.com/1200x/68/73/ae/6873ae51eaeb4c8fed7e76cb0db51483.jpg",
+        "https://i.pinimg.com/736x/92/65/2d/92652d6fe99c66ec19bb504ad413e54e.jpg",
       popular: false,
     },
     {
@@ -60,7 +60,7 @@ export default function GemstonesPage() {
       price: "₹3,000+",
       benefits: "Emotional balance, Calmness, Mental Peace",
       image:
-        "https://i.pinimg.com/1200x/55/aa/9f/55aa9f1bf2dfc5384bcbc1a21e737c04.jpg",
+        "https://i.pinimg.com/1200x/92/f4/14/92f41484ab08c0e5c1caa88ab4fb3e1e.jpg",
       popular: false,
     },
   ];
@@ -98,13 +98,13 @@ export default function GemstonesPage() {
               )}
 
               {/* Image Container */}
-              <div className="w-full h-64 relative overflow-hidden bg-zinc-900 shrink-0 p-8 flex items-center justify-center">
-                <div className="absolute inset-0 bg-linear-to-b from-transparent to-black/60 z-0"></div>
+              <div className="w-full h-64 sm:h-72 relative overflow-hidden shrink-0 bg-white">
                 <img
                   src={gem.image}
                   alt={gem.name}
-                  className="w-full h-full object-contain relative z-10 group-hover:scale-110 drop-shadow-[0_0_20px_rgba(255,255,255,0.1)] transition-transform duration-700"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                 />
+                <div className="absolute inset-x-0 bottom-0 h-1/3 bg-linear-to-t from-(--bg-surface) to-transparent pointer-events-none z-10"></div>
               </div>
 
               {/* Content Container */}

@@ -245,17 +245,32 @@ export default function ArticlePage() {
 
                 <div className="flex flex-col gap-4">
                   {[
-                    "Vedic Astrology: Understanding the 12 Houses of the Zodiac",
-                    "How to Choose the Right Gemstone for Your Zodiac Sign",
-                    "Mercury Retrograde in Pisces: What You Need to Know",
-                  ].map((title, i) => (
+                    {
+                      title:
+                        "Vedic Astrology: Understanding the 12 Houses of the Zodiac",
+                      image:
+                        "https://i.pinimg.com/736x/bf/b3/53/bfb353e651f92e0cede834ca2155e4c4.jpg",
+                    },
+                    {
+                      title:
+                        "How to Choose the Right Gemstone for Your Zodiac Sign",
+                      image:
+                        "https://i.pinimg.com/1200x/2f/3a/c5/2f3ac5591a3f0b0074397e54cfb62f14.jpg",
+                    },
+                    {
+                      title:
+                        "Mercury Retrograde in Pisces: What You Need to Know",
+                      image:
+                        "https://i.pinimg.com/736x/ba/ac/8f/baac8f414382c797e4951953827e5aba.jpg",
+                    },
+                  ].map((article, i) => (
                     <article
                       key={i}
                       className="flex gap-4 group cursor-pointer border-b border-zinc-800/40 pb-4 last:border-0 last:pb-0"
                     >
                       <div className="w-16 h-16 shrink-0 rounded-lg overflow-hidden bg-zinc-800">
                         <img
-                          src={`https://i.pinimg.com/1200x/${["9d/23/e6/9d23e61ff36056f7e4afeb5347209ac7", "09/cc/62/09cc62ac4e21a8d0b28416caab94a974", "99/bd/27/99bd27ee85cc223e71dfbc216b345da5"][i]}.jpg`}
+                          src={article.image}
                           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                           alt=""
                         />
@@ -265,7 +280,7 @@ export default function ArticlePage() {
                           Astrology
                         </span>
                         <h4 className="text-sm font-semibold text-(--text-primary) leading-[1.3] group-hover:text-(--accent) transition-colors line-clamp-2">
-                          {title}
+                          {article.title}
                         </h4>
                       </div>
                     </article>

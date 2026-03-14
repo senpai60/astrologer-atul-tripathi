@@ -19,7 +19,7 @@ export default function DailyHoroscopePage() {
       excerpt:
         "Discover what the stars hold for your professional life. Will you get that promotion or is it time for a career change? Read our expert financial predictions.",
       image:
-        "https://i.pinimg.com/1200x/9d/23/e6/9d23e61ff36056f7e4afeb5347209ac7.jpg",
+        "https://i.pinimg.com/736x/42/a0/0e/42a00ecadeeab1569df30c56bc4bcdee.jpg",
       category: "Career",
       date: "26 Feb 2026",
     },
@@ -29,7 +29,7 @@ export default function DailyHoroscopePage() {
       excerpt:
         "With the changing planetary positions, find out how your energy levels and overall well-being might be affected today.",
       image:
-        "https://i.pinimg.com/1200x/09/cc/62/09cc62ac4e21a8d0b28416caab94a974.jpg",
+        "https://i.pinimg.com/1200x/9b/63/a8/9b63a8014548ea9d7e3f006c96b70213.jpg",
       category: "Health",
       date: "26 Feb 2026",
     },
@@ -39,7 +39,7 @@ export default function DailyHoroscopePage() {
       excerpt:
         "Family dynamics can be complex. See how today's cosmic alignments influence your interactions with loved ones and relatives.",
       image:
-        "https://i.pinimg.com/1200x/99/bd/27/99bd27ee85cc223e71dfbc216b345da5.jpg",
+        "https://i.pinimg.com/1200x/3d/ef/55/3def558579612a517065a7c48310e918.jpg",
       category: "Family",
       date: "25 Feb 2026",
     },
@@ -49,7 +49,7 @@ export default function DailyHoroscopePage() {
       excerpt:
         "A day meant for deep introspection. Discover which meditation practices align best with today's astrological forecast.",
       image:
-        "https://i.pinimg.com/1200x/29/7a/ff/297aff703875be44a864724c9c10f81d.jpg",
+        "https://i.pinimg.com/webp/1200x/ed/a7/07/eda7077e79a03f215b3e31b0f8adddf8.webp",
       category: "Spirituality",
       date: "25 Feb 2026",
     },

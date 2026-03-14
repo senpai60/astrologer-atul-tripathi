@@ -3,6 +3,7 @@ import { Poppins } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/ui/Navbar";
 import Footer from "@/components/ui/Footer";
+import InitialPreloader from "@/components/ui/InitialPreloader";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -27,6 +28,7 @@ export default function RootLayout({
         className={`${poppins.variable} ${poppins.className} antialiased min-h-screen flex flex-col overflow-x-hidden`}
         suppressHydrationWarning
       >
+        <InitialPreloader />
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />

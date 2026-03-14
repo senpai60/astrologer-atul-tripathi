@@ -45,7 +45,7 @@ const AllProductsPage = () => {
       title: "GIFT FEEL FREE TO GIFT",
       category: "special offerings",
       imageUrl:
-        "https://i.pinimg.com/736x/5b/c9/ed/5bc9ed9b4eaf7baea6111f185387c934.jpg",
+        "https://i.pinimg.com/1200x/92/74/e6/9274e642e5952d0b18320a0f93e167d6.jpg",
       isSale: true,
       desc: "Gift a cosmic reading to a loved one. Offer guidance when they need it most with our open-ended gift offerings.",
     },
@@ -55,7 +55,7 @@ const AllProductsPage = () => {
       category: "marriage matching",
       discountedPrice: 3100.0,
       imageUrl:
-        "https://i.pinimg.com/736x/1a/f7/78/1af7788edba831cd0e107567ae2cdef2.jpg",
+        "https://i.pinimg.com/736x/cd/5e/f4/cd5ef4611a8ff2716fc1f59c9aa473f8.jpg",
       isSale: true,
       desc: "Classic Vedic match-making to determine the Ashtakoot Guna balance for a successful marriage.",
     },
